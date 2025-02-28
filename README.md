@@ -2,7 +2,8 @@
 
 A list of free Gimp plugins.
 
-Official Gimp documentation page for installing scripts https://docs.gimp.org/en/install-script-fu.html\
+Official Gimp documentation page for installing scripts https://docs.gimp.org/en/install-script-fu.html
+
 For install a plugin, copy the file in Gimp scripts folder.
 
 Example: `C:\Users\tokano\AppData\Roaming\GIMP\2.10\scripts`

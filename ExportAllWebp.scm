@@ -22,8 +22,12 @@
       (let* (
              (basename (car (gimp-image-get-filename image))) ; Retrieve image path and name
              (filename (replace-extension basename ".webp"))   ; Replace extension with .webp
-             (drawable (car (gimp-image-get-active-drawable image))) ; Retrieve active layer
+             (width (car (gimp-image-width image))) ; Retrieve image width
+             (height (car (gimp-image-height image))) ; Retrieve image height
+             (drawable (car (gimp-image-merge-visible-layers image 0))) ; Merge all layers
             )
+        ; Resize the merged layer to match the canvas size
+        (gimp-layer-resize-to-image-size drawable)
         ; Export image in WebP format with chosen quality
         (file-webp-save 1 image drawable filename filename 0 0 quality 100 0 0 0 0 0 0 0 0 0)
       )
